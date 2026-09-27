@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PlacementGPT Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         DASHBOARD WRAPPER
+    ========================================================== -->
+
+    <div class="dashboard-wrapper">
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <a href="dashboard.html" class="logo-link" style="display: flex; align-items: center;">
+                    <img src="images/logo.png" alt="PlacementGPT Logo" class="logo-img">
+                </a>
+                <button id="desktopSidebarToggle" style="background: transparent; border: none; font-size: 18px; color: #6b7280; cursor: pointer; padding: 5px;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">MAIN MENU</p>
+
+                <a href="dashboard.html" class="nav-item active">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span>Overview</span>
+                </a>
+
+                <a href="aptitude.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </span>
+                    <span>Aptitude Practice</span>
+                </a>
+
+                <a href="coding.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </span>
+                    <span>Coding Practice</span>
+                </a>
+
+                <a href="mocktest.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </span>
+                    <span>Mock Tests</span>
+                </a>
+
+                <a href="group-discussion.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </span>
+                    <span>Group Discussion</span>
+                </a>
+
+                <p class="nav-title second-title">MY SPACE</p>
+
+                <a href="progress.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </span>
+                    <span>My Progress</span>
+                </a>
+
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+                    <span>Settings</span>
+                </a>
+
+                <button class="logout-btn" id="logoutBtn">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+        <main class="main-content">
+
+            <!-- =================================================
+                 TOP HEADER
+            ================================================== -->
+
+            <header class="top-header">
+
+                <!-- Mobile Menu -->
+                <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Search -->
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search practice, tests..."
+                    >
+
+                </div>
+
+
+                <!-- Header Right -->
+                <div class="header-right">
+
+                    <!-- Notification -->
+                    <button
+                        class="notification-btn"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+
+                    <!-- User Profile -->
+                    <div class="header-profile" id="profileMenu">
+
+                        <div class="profile-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong id="headerUserName">
+                                Student
+                            </strong>
+
+                            <span>
+                                Student
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+            ================================================== -->
+
+            <section class="page-content">
+
+                <!-- =================================================
+                     WELCOME SECTION
+                ================================================== -->
+
+                <div class="welcome-section">
+
+                    <div class="welcome-text">
+
+                        <p class="welcome-label">
+                            YOUR PLACEMENT JOURNEY
+                        </p>
+
+                        <h1>
+                            Good Morning, <span id="welcomeUserName">Student</span>! 👋
+                        </h1>
+
+                        <p>
+                            Keep practicing and move one step closer
+                            to your dream placement.
+                        </p>
+
+                    </div>
+
+                    <div class="welcome-date">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        <span id="currentDate">
+                            Today
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUICK STATS
+                ================================================== -->
+
+                <div class="stats-grid">
+
+                    <!-- Aptitude -->
+                    <div class="stat-card">
+
+                        <div class="stat-icon aptitude-icon">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span class="stat-label">
+                                Aptitude
+                            </span>
+
+                            <strong>
+                                68%
+                            </strong>
+
+                            <small>
+                                <i class="fa-solid fa-arrow-up"></i>
+                                8% this week
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Coding -->
+                    <div class="stat-card">
+
+                        <div class="stat-icon coding-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span class="stat-label">
+                                Coding
+                            </span>
+
+                            <strong>
+                                42
+                            </strong>
+
+                            <small>
+                                Problems solved
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Mock Tests -->
+                    <div class="stat-card">
+
+                        <div class="stat-icon mock-icon">
+                            <i class="fa-solid fa-file-circle-check"></i>
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span class="stat-label">
+                                Mock Tests
+                            </span>
+
+                            <strong>
+                                08
+                            </strong>
+
+                            <small>
+                                Tests completed
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Overall -->
+                    <div class="stat-card">
+
+                        <div class="stat-icon progress-icon">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span class="stat-label">
+                                Overall Progress
+                            </span>
+
+                            <strong>
+                                64%
+                            </strong>
+
+                            <small>
+                                Keep going!
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     PREPARATION SECTION
+                ================================================== -->
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Continue Preparation</h2>
+                        <p>Choose where you want to continue learning.</p>
+                    </div>
+
+                    <a href="#" class="view-all">
+                        View All
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <!-- Preparation Cards -->
+                <div class="preparation-grid">
+
+                    <!-- Aptitude -->
+                    <article class="preparation-card">
+
+                        <div class="card-top">
+
+                            <div class="preparation-icon aptitude-card-icon">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+
+                            <span class="card-badge">
+                                68% Complete
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Aptitude Practice
+                        </h3>
+
+                        <p>
+                            Improve quantitative aptitude,
+                            logical reasoning and verbal ability.
+                        </p>
+
+                        <div class="progress-wrapper">
+
+                            <div class="progress-bar">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 68%;"
+                                ></div>
+                            </div>
+
+                            <span>68%</span>
+
+                        </div>
+
+                        <a href="aptitude.html" class="card-button">
+                            Continue Practice
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <!-- Coding -->
+                    <article class="preparation-card">
+
+                        <div class="card-top">
+
+                            <div class="preparation-icon coding-card-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+
+                            <span class="card-badge">
+                                42 Solved
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Coding Practice
+                        </h3>
+
+                        <p>
+                            Solve programming problems and
+                            improve your problem-solving skills.
+                        </p>
+
+                        <div class="progress-wrapper">
+
+                            <div class="progress-bar">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 52%;"
+                                ></div>
+                            </div>
+
+                            <span>52%</span>
+
+                        </div>
+
+                        <a href="coding.html" class="card-button">
+                            Start Coding
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <!-- Mock Test -->
+                    <article class="preparation-card">
+
+                        <div class="card-top">
+
+                            <div class="preparation-icon mock-card-icon">
+                                <i class="fa-solid fa-file-pen"></i>
+                            </div>
+
+                            <span class="card-badge">
+                                08 Completed
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Mock Tests
+                        </h3>
+
+                        <p>
+                            Test your preparation with
+                            placement-style mock examinations.
+                        </p>
+
+                        <div class="progress-wrapper">
+
+                            <div class="progress-bar">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 75%;"
+                                ></div>
+                            </div>
+
+                            <span>75%</span>
+
+                        </div>
+
+                        <a href="mocktest.html" class="card-button">
+                            Take a Test
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+
+                    <!-- Group Discussion -->
+                    <article class="preparation-card">
+
+                        <div class="card-top">
+
+                            <div class="preparation-icon gd-card-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+
+                            <span class="card-badge">
+                                Practice
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Group Discussion
+                        </h3>
+
+                        <p>
+                            Prepare for GD rounds with topics,
+                            discussion points and useful tips.
+                        </p>
+
+                        <div class="progress-wrapper">
+
+                            <div class="progress-bar">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 35%;"
+                                ></div>
+                            </div>
+
+                            <span>35%</span>
+
+                        </div>
+
+                        <a href="group-discussion.html" class="card-button">
+                            Start Preparation
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+                </div>
+
+
+                <!-- =================================================
+                     LOWER CONTENT
+                ================================================== -->
+
+                <div class="dashboard-lower-grid">
+
+
+                    <!-- =================================================
+                         OVERALL PROGRESS
+                    ================================================== -->
+
+                    <section class="progress-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h2>Your Progress</h2>
+                                <p>Track your placement preparation.</p>
+                            </div>
+
+                            <a href="progress.html">
+                                View Details
+                            </a>
+
+                        </div>
+
+
+                        <div class="overall-progress">
+
+                            <div class="progress-circle">
+
+                                <div class="circle-inner">
+
+                                    <strong>
+                                        64%
+                                    </strong>
+
+                                    <span>
+                                        Overall
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-details">
+
+                                <div class="progress-detail-item">
+
+                                    <div class="detail-heading">
+
+                                        <span>
+                                            <i class="fa-solid fa-brain"></i>
+                                            Aptitude
+                                        </span>
+
+                                        <strong>
+                                            68%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="detail-bar">
+                                        <span style="width: 68%;"></span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="progress-detail-item">
+
+                                    <div class="detail-heading">
+
+                                        <span>
+                                            <i class="fa-solid fa-code"></i>
+                                            Coding
+                                        </span>
+
+                                        <strong>
+                                            52%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="detail-bar">
+                                        <span style="width: 52%;"></span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="progress-detail-item">
+
+                                    <div class="detail-heading">
+
+                                        <span>
+                                            <i class="fa-solid fa-file-pen"></i>
+                                            Mock Tests
+                                        </span>
+
+                                        <strong>
+                                            75%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="detail-bar">
+                                        <span style="width: 75%;"></span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="progress-detail-item">
+
+                                    <div class="detail-heading">
+
+                                        <span>
+                                            <i class="fa-solid fa-users"></i>
+                                            GD Preparation
+                                        </span>
+
+                                        <strong>
+                                            35%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="detail-bar">
+                                        <span style="width: 35%;"></span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         RECENT ACTIVITY
+                    ================================================== -->
+
+                    <section class="activity-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h2>Recent Activity</h2>
+                                <p>Your latest practice activity.</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-list">
+
+                            <!-- Activity 1 -->
+                            <div class="activity-item">
+
+                                <div class="activity-icon aptitude-activity">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+
+                                <div class="activity-content">
+
+                                    <strong>
+                                        Aptitude Test Completed
+                                    </strong>
+
+                                    <span>
+                                        Score: 16 / 20
+                                    </span>
+
+                                    <small>
+                                        2 hours ago
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Activity 2 -->
+                            <div class="activity-item">
+
+                                <div class="activity-icon coding-activity">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+
+                                <div class="activity-content">
+
+                                    <strong>
+                                        Coding Problem Solved
+                                    </strong>
+
+                                    <span>
+                                        Two Sum
+                                    </span>
+
+                                    <small>
+                                        Yesterday
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Activity 3 -->
+                            <div class="activity-item">
+
+                                <div class="activity-icon mock-activity">
+                                    <i class="fa-solid fa-file-pen"></i>
+                                </div>
+
+                                <div class="activity-content">
+
+                                    <strong>
+                                        Mock Test Completed
+                                    </strong>
+
+                                    <span>
+                                        Placement Mock Test #08
+                                    </span>
+
+                                    <small>
+                                        2 days ago
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Activity 4 -->
+                            <div class="activity-item">
+
+                                <div class="activity-icon gd-activity">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+
+                                <div class="activity-content">
+
+                                    <strong>
+                                        GD Topic Viewed
+                                    </strong>
+
+                                    <span>
+                                        Artificial Intelligence
+                                    </span>
+
+                                    <small>
+                                        3 days ago
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <a href="progress.html" class="activity-footer">
+                            View all activity
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </section>
+
+                </div>
+
+
+                <!-- =================================================
+                     RECOMMENDED PRACTICE
+                ================================================== -->
+
+                <section class="recommended-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Recommended For You</h2>
+                            <p>Practice these to improve your preparation.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="recommended-grid">
+
+                        <!-- Recommendation 1 -->
+                        <div class="recommended-card">
+
+                            <div class="recommendation-icon">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+
+                            <div class="recommendation-content">
+
+                                <span class="recommendation-type">
+                                    APTITUDE
+                                </span>
+
+                                <h3>
+                                    Time & Work
+                                </h3>
+
+                                <p>
+                                    15 questions
+                                </p>
+
+                            </div>
+
+                            <button class="recommend-btn">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+
+                        <!-- Recommendation 2 -->
+                        <div class="recommended-card">
+
+                            <div class="recommendation-icon">
+                                <i class="fa-solid fa-terminal"></i>
+                            </div>
+
+                            <div class="recommendation-content">
+
+                                <span class="recommendation-type">
+                                    CODING
+                                </span>
+
+                                <h3>
+                                    Arrays & Strings
+                                </h3>
+
+                                <p>
+                                    10 problems
+                                </p>
+
+                            </div>
+
+                            <button class="recommend-btn">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+
+                        <!-- Recommendation 3 -->
+                        <div class="recommended-card">
+
+                            <div class="recommendation-icon">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+
+                            <div class="recommendation-content">
+
+                                <span class="recommendation-type">
+                                    GROUP DISCUSSION
+                                </span>
+
+                                <h3>
+                                    AI in Education
+                                </h3>
+
+                                <p>
+                                    Discussion topic
+                                </p>
+
+                            </div>
+
+                            <button class="recommend-btn">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         MOBILE SIDEBAR OVERLAY
+    ========================================================== -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =========================================================
+         DASHBOARD JAVASCRIPT
+    ========================================================== -->
+
+    <script src="dashboard.js"></script>
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

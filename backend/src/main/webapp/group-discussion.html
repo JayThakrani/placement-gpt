@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Group Discussion | PlacementGPT</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="group-discussion.css">
+        <link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+
+<div class="dashboard-wrapper">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <a href="dashboard.html" class="logo-link" style="display: flex; align-items: center;">
+                    <img src="images/logo.png" alt="PlacementGPT Logo" class="logo-img">
+                </a>
+                <button id="desktopSidebarToggle" style="background: transparent; border: none; font-size: 18px; color: #6b7280; cursor: pointer; padding: 5px;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">MAIN MENU</p>
+
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span>Overview</span>
+                </a>
+
+                <a href="aptitude.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </span>
+                    <span>Aptitude Practice</span>
+                </a>
+
+                <a href="coding.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </span>
+                    <span>Coding Practice</span>
+                </a>
+
+                <a href="mocktest.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </span>
+                    <span>Mock Tests</span>
+                </a>
+
+                <a href="group-discussion.html" class="nav-item active">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </span>
+                    <span>Group Discussion</span>
+                </a>
+
+                <p class="nav-title second-title">MY SPACE</p>
+
+                <a href="progress.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </span>
+                    <span>My Progress</span>
+                </a>
+
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+                    <span>Settings</span>
+                </a>
+
+                <button class="logout-btn" id="logoutBtn">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content">
+
+        <header class="top-header">
+
+                <!-- Mobile Menu -->
+                <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Search -->
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search practice, tests..."
+                    >
+
+                </div>
+
+
+                <!-- Header Right -->
+                <div class="header-right">
+
+                    <!-- Notification -->
+                    <button
+                        class="notification-btn"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+
+                    <!-- User Profile -->
+                    <div class="header-profile" id="profileMenu">
+
+                        <div class="profile-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong id="headerUserName">
+                                Student
+                            </strong>
+
+                            <span>
+                                Student
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+        <section class="page-content">
+
+            <div class="hero-section">
+
+                <div>
+
+                    <span class="eyebrow">
+                        <i class="fa-solid fa-comments"></i>
+                        GROUP DISCUSSION
+                    </span>
+
+                    <h1>Speak. Think. Lead.</h1>
+
+                    <p>
+                        Practice common GD topics and develop the
+                        confidence to communicate your ideas clearly.
+                    </p>
+
+                    <button class="start-gd-btn" id="startBtn">
+                        Start Practice
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+                <div class="hero-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+
+            </div>
+
+
+            <div class="stats-row">
+
+                <div>
+                    <i class="fa-solid fa-layer-group"></i>
+                    <strong>24</strong>
+                    <span>Topics</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    <strong>06</strong>
+                    <span>Practiced</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-clock"></i>
+                    <strong>45m</strong>
+                    <span>Practice Time</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-star"></i>
+                    <strong>72%</strong>
+                    <span>Confidence</span>
+                </div>
+
+            </div>
+
+
+            <div class="section-heading">
+                <div>
+                    <h2>Popular GD Topics</h2>
+                    <p>Prepare for frequently asked placement topics</p>
+                </div>
+            </div>
+
+
+            <div class="topic-grid" id="topicGrid">
+
+                <article class="topic-card">
+
+                    <div class="topic-number">01</div>
+
+                    <div class="topic-content">
+                        <span class="topic-type">TECHNOLOGY</span>
+
+                        <h3>Is Artificial Intelligence a Threat to Jobs?</h3>
+
+                        <p>
+                            Discuss the impact of AI and automation
+                            on employment and future careers.
+                        </p>
+
+                        <button class="topic-btn">
+                            Practice Topic
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <article class="topic-card">
+
+                    <div class="topic-number">02</div>
+
+                    <div class="topic-content">
+                        <span class="topic-type">SOCIAL</span>
+
+                        <h3>Social Media: Boon or Curse?</h3>
+
+                        <p>
+                            Analyze how social media affects society,
+                            communication and young people.
+                        </p>
+
+                        <button class="topic-btn">
+                            Practice Topic
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <article class="topic-card">
+
+                    <div class="topic-number">03</div>
+
+                    <div class="topic-content">
+                        <span class="topic-type">EDUCATION</span>
+
+                        <h3>Online Education vs Classroom Education</h3>
+
+                        <p>
+                            Compare flexibility, interaction and
+                            effectiveness of both learning models.
+                        </p>
+
+                        <button class="topic-btn">
+                            Practice Topic
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <article class="topic-card">
+
+                    <div class="topic-number">04</div>
+
+                    <div class="topic-content">
+                        <span class="topic-type">BUSINESS</span>
+
+                        <h3>Startups vs Traditional Jobs</h3>
+
+                        <p>
+                            Discuss risk, growth, stability and
+                            opportunities in both career paths.
+                        </p>
+
+                        <button class="topic-btn">
+                            Practice Topic
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <article class="topic-card">
+
+                    <div class="topic-number">05</div>
+
+                    <div class="topic-content">
+                        <span class="topic-type">ECONOMY</span>
+
+                        <h3>Is India Ready for a Cashless Economy?</h3>
+
+                        <p>
+                            Discuss digital payments, accessibility,
+                            security and financial inclusion.
+                        </p>
+
+                        <button class="topic-btn">
+                            Practice Topic
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <article class="topic-card">
+
+                    <div class="topic-number">06</div>
+
+                    <div class="topic-content">
+                        <span class="topic-type">CAREER</span>
+
+                        <h3>Skills vs Degree: What Matters More?</h3>
+
+                        <p>
+                            Debate the importance of academic degrees
+                            compared with practical skills.
+                        </p>
+
+                        <button class="topic-btn">
+                            Practice Topic
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="group-discussion.js"></script>
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

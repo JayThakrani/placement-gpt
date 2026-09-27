@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Problems — PlacementGPT Admin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <link rel="stylesheet" href="admin-coding.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+            <div class="sidebar-logo" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <a href="dashboard.html" class="logo-link" style="display: flex; align-items: center;">
+                    <img src="images/logo.png" alt="PlacementGPT Logo" class="logo-img">
+                </a>
+                <button id="desktopSidebarToggle" style="background: transparent; border: none; font-size: 18px; color: #6b7280; cursor: pointer; padding: 5px;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="admin-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>ADMIN PANEL</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-students.html" class="nav-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="admin-questions.html" class="nav-item">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>Questions</span>
+                </a>
+
+                <a href="admin-mocktest.html" class="nav-item">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                    <span>Mock Tests</span>
+                </a>
+
+                <a href="admin-coding.html" class="nav-item active">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Coding Problems</span>
+                </a>
+
+                <a href="admin-reports.html" class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Reports</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <a href="admin-settings.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" class="nav-item logout-item" id="logoutButton">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="mobile-menu" id="mobileMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div>
+                    <p class="header-label">ADMINISTRATION</p>
+                    <h1>Coding Problems</h1>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button class="header-icon" id="notificationButton">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="admin-profile" id="adminProfile">
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <div class="admin-info">
+                        <strong>Administrator</strong>
+                        <span>Admin</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Page Content -->
+        <section class="admin-section active-section dashboard-content">
+
+            <!-- Welcome Banner -->
+            <div class="welcome-section">
+                <div>
+                    <p class="welcome-small">PROBLEM REPOSITORY</p>
+                    <h2>Programming <span>Challenges</span></h2>
+                    <p class="welcome-description">Manage coding problems, topic tags, test cases, and difficulty tiers.</p>
+                </div>
+                <button class="btn-primary" id="openAddCodingModalBtn">
+                    <i class="fa-solid fa-code-pull-request"></i> Add Coding Problem
+                </button>
+            </div>
+
+            <!-- Table Card -->
+            <div class="dashboard-card" style="padding: 22px;">
+                <div class="admin-toolbar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="codingSearchInput" placeholder="Search problem titles or tags...">
+                    </div>
+                    <select class="filter-select" id="codingDifficultyFilter">
+                        <option value="ALL">All Difficulties</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </div>
+
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Problem Title</th>
+                                <th>Topic / Category</th>
+                                <th>Difficulty</th>
+                                <th>Submissions</th>
+                                <th>Pass Rate</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="codingTbody">
+                            <!-- Rendered by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Modals -->
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="modal-dialog" id="addCodingModal">
+        <div class="modal-header">
+            <h3><i class="fa-solid fa-code"></i> Add Coding Challenge</h3>
+            <button class="modal-close closeModalBtn">&times;</button>
+        </div>
+        <form id="addCodingForm">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Problem Title *</label>
+                    <input type="text" class="form-control" id="newCodingTitle" placeholder="e.g. Two Sum" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Topic / Category *</label>
+                        <input type="text" class="form-control" id="newCodingTopic" placeholder="e.g. Arrays & Hashing" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Difficulty *</label>
+                        <select class="form-control" id="newCodingDifficulty" required>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Problem Description *</label>
+                    <textarea class="form-control" id="newCodingDesc" rows="3" placeholder="Describe problem details..." required></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary closeModalBtn">Cancel</button>
+                <button type="submit" class="btn-primary">Save Problem</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Admin JS -->
+    <script src="admin-dashboard.js"></script>
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

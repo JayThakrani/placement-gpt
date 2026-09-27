@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mock Tests | PlacementGPT</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="mocktest.css">
+        <link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+
+<div class="dashboard-wrapper">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <a href="dashboard.html" class="logo-link" style="display: flex; align-items: center;">
+                    <img src="images/logo.png" alt="PlacementGPT Logo" class="logo-img">
+                </a>
+                <button id="desktopSidebarToggle" style="background: transparent; border: none; font-size: 18px; color: #6b7280; cursor: pointer; padding: 5px;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">MAIN MENU</p>
+
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span>Overview</span>
+                </a>
+
+                <a href="aptitude.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </span>
+                    <span>Aptitude Practice</span>
+                </a>
+
+                <a href="coding.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </span>
+                    <span>Coding Practice</span>
+                </a>
+
+                <a href="mocktest.html" class="nav-item active">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </span>
+                    <span>Mock Tests</span>
+                </a>
+
+                <a href="group-discussion.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </span>
+                    <span>Group Discussion</span>
+                </a>
+
+                <p class="nav-title second-title">MY SPACE</p>
+
+                <a href="progress.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </span>
+                    <span>My Progress</span>
+                </a>
+
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+                    <span>Settings</span>
+                </a>
+
+                <button class="logout-btn" id="logoutBtn">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+                <!-- Mobile Menu -->
+                <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Search -->
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search practice, tests..."
+                    >
+
+                </div>
+
+
+                <!-- Header Right -->
+                <div class="header-right">
+
+                    <!-- Notification -->
+                    <button
+                        class="notification-btn"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+
+                    <!-- User Profile -->
+                    <div class="header-profile" id="profileMenu">
+
+                        <div class="profile-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong id="headerUserName">
+                                Student
+                            </strong>
+
+                            <span>
+                                Student
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+        <!-- PAGE -->
+        <section class="page-content">
+
+            <!-- HEADING -->
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        <i class="fa-solid fa-file-circle-check"></i>
+                        MOCK TEST CENTER
+                    </span>
+
+                    <h1>Test Yourself Like a Real Interview</h1>
+
+                    <p>
+                        Take company-style mock tests and measure
+                        your placement preparation.
+                    </p>
+
+                </div>
+
+                <div class="test-score">
+
+                    <span>Tests Completed</span>
+
+                    <strong>08</strong>
+
+                    <small>this month</small>
+
+                </div>
+
+            </div>
+
+
+            <!-- TEST CATEGORIES -->
+            <div class="category-row">
+
+                <button class="category-btn active"
+                        data-category="all">
+                    All Tests
+                </button>
+
+                <button class="category-btn"
+                        data-category="aptitude">
+                    Aptitude
+                </button>
+
+                <button class="category-btn"
+                        data-category="technical">
+                    Technical
+                </button>
+
+                <button class="category-btn"
+                        data-category="company">
+                    Company Based
+                </button>
+
+            </div>
+
+
+            <!-- TEST GRID -->
+            <div class="test-grid" id="testGrid">
+
+                <!-- TEST 1 -->
+                <article class="test-card"
+                         data-category="aptitude">
+
+                    <div class="test-top">
+
+                        <div class="test-icon blue">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+
+                        <span class="level easy">
+                            Easy
+                        </span>
+
+                    </div>
+
+                    <h3>Aptitude Basics Test</h3>
+
+                    <p>
+                        Practice quantitative aptitude,
+                        logical reasoning and verbal ability.
+                    </p>
+
+                    <div class="test-details">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            20 Minutes
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-list-check"></i>
+                            20 Questions
+                        </span>
+
+                    </div>
+
+                    <div class="test-footer">
+
+                        <span class="attempted">
+                            <i class="fa-solid fa-users"></i>
+                            2.4k Attempts
+                        </span>
+
+                        <button class="start-btn">
+                            Start Test
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TEST 2 -->
+                <article class="test-card"
+                         data-category="technical">
+
+                    <div class="test-top">
+
+                        <div class="test-icon purple">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+
+                        <span class="level medium">
+                            Medium
+                        </span>
+
+                    </div>
+
+                    <h3>Technical MCQ Challenge</h3>
+
+                    <p>
+                        Test your knowledge of programming,
+                        DBMS, operating systems and CN.
+                    </p>
+
+                    <div class="test-details">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            30 Minutes
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-list-check"></i>
+                            30 Questions
+                        </span>
+
+                    </div>
+
+                    <div class="test-footer">
+
+                        <span class="attempted">
+                            <i class="fa-solid fa-users"></i>
+                            1.8k Attempts
+                        </span>
+
+                        <button class="start-btn">
+                            Start Test
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TEST 3 -->
+                <article class="test-card"
+                         data-category="company">
+
+                    <div class="test-top">
+
+                        <div class="test-icon green">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+
+                        <span class="level medium">
+                            Medium
+                        </span>
+
+                    </div>
+
+                    <h3>TCS Placement Mock</h3>
+
+                    <p>
+                        Practice a placement-style test covering
+                        aptitude, reasoning and programming.
+                    </p>
+
+                    <div class="test-details">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            45 Minutes
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-list-check"></i>
+                            45 Questions
+                        </span>
+
+                    </div>
+
+                    <div class="test-footer">
+
+                        <span class="attempted">
+                            <i class="fa-solid fa-users"></i>
+                            3.1k Attempts
+                        </span>
+
+                        <button class="start-btn">
+                            Start Test
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TEST 4 -->
+                <article class="test-card"
+                         data-category="company">
+
+                    <div class="test-top">
+
+                        <div class="test-icon orange">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+
+                        <span class="level hard">
+                            Hard
+                        </span>
+
+                    </div>
+
+                    <h3>Infosys Placement Mock</h3>
+
+                    <p>
+                        Company-style preparation with aptitude,
+                        logical reasoning and technical questions.
+                    </p>
+
+                    <div class="test-details">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            45 Minutes
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-list-check"></i>
+                            40 Questions
+                        </span>
+
+                    </div>
+
+                    <div class="test-footer">
+
+                        <span class="attempted">
+                            <i class="fa-solid fa-users"></i>
+                            2.2k Attempts
+                        </span>
+
+                        <button class="start-btn">
+                            Start Test
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TEST 5 -->
+                <article class="test-card"
+                         data-category="technical">
+
+                    <div class="test-top">
+
+                        <div class="test-icon red">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <span class="level hard">
+                            Hard
+                        </span>
+
+                    </div>
+
+                    <h3>CS Fundamentals Test</h3>
+
+                    <p>
+                        Challenge yourself with DBMS, OS,
+                        computer networks and software engineering.
+                    </p>
+
+                    <div class="test-details">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            35 Minutes
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-list-check"></i>
+                            35 Questions
+                        </span>
+
+                    </div>
+
+                    <div class="test-footer">
+
+                        <span class="attempted">
+                            <i class="fa-solid fa-users"></i>
+                            1.5k Attempts
+                        </span>
+
+                        <button class="start-btn">
+                            Start Test
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TEST 6 -->
+                <article class="test-card"
+                         data-category="aptitude">
+
+                    <div class="test-top">
+
+                        <div class="test-icon pink">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+
+                        <span class="level medium">
+                            Medium
+                        </span>
+
+                    </div>
+
+                    <h3>Advanced Aptitude</h3>
+
+                    <p>
+                        Improve speed and accuracy with
+                        placement-level aptitude questions.
+                    </p>
+
+                    <div class="test-details">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            30 Minutes
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-list-check"></i>
+                            25 Questions
+                        </span>
+
+                    </div>
+
+                    <div class="test-footer">
+
+                        <span class="attempted">
+                            <i class="fa-solid fa-users"></i>
+                            1.9k Attempts
+                        </span>
+
+                        <button class="start-btn">
+                            Start Test
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- EMPTY STATE -->
+            <div class="empty-state" id="emptyState">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <h3>No tests found</h3>
+
+                <p>
+                    Try another category or search term.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- TEST MODAL -->
+<div class="test-modal" id="testModal">
+
+    <div class="test-modal-box">
+
+        <button class="close-modal" id="closeModal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-file-circle-check"></i>
+        </div>
+
+        <h2 id="modalTestName">Start Mock Test</h2>
+
+        <p>
+            You are about to start the test.
+            Make sure you have enough time to complete it.
+        </p>
+
+        <div class="rules">
+
+            <div>
+                <i class="fa-solid fa-clock"></i>
+                <span>Timer starts immediately</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-list-check"></i>
+                <span>Answer all questions</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-ban"></i>
+                <span>Do not refresh the page</span>
+            </div>
+
+        </div>
+
+        <button class="modal-start-btn" id="modalStartBtn">
+            Start Test
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="mocktest.js"></script>
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

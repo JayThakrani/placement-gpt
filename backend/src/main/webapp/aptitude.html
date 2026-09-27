@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PlacementGPT - Aptitude Practice</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="aptitude.css">
+        <link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+
+<div class="dashboard-wrapper">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <a href="dashboard.html" class="logo-link" style="display: flex; align-items: center;">
+                    <img src="images/logo.png" alt="PlacementGPT Logo" class="logo-img">
+                </a>
+                <button id="desktopSidebarToggle" style="background: transparent; border: none; font-size: 18px; color: #6b7280; cursor: pointer; padding: 5px;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">MAIN MENU</p>
+
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span>Overview</span>
+                </a>
+
+                <a href="aptitude.html" class="nav-item active">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </span>
+                    <span>Aptitude Practice</span>
+                </a>
+
+                <a href="coding.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </span>
+                    <span>Coding Practice</span>
+                </a>
+
+                <a href="mocktest.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </span>
+                    <span>Mock Tests</span>
+                </a>
+
+                <a href="group-discussion.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </span>
+                    <span>Group Discussion</span>
+                </a>
+
+                <p class="nav-title second-title">MY SPACE</p>
+
+                <a href="progress.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </span>
+                    <span>My Progress</span>
+                </a>
+
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+                    <span>Settings</span>
+                </a>
+
+                <button class="logout-btn" id="logoutBtn">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+                <!-- Mobile Menu -->
+                <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Search -->
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search practice, tests..."
+                    >
+
+                </div>
+
+
+                <!-- Header Right -->
+                <div class="header-right">
+
+                    <!-- Notification -->
+                    <button
+                        class="notification-btn"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+
+                    <!-- User Profile -->
+                    <div class="header-profile" id="profileMenu">
+
+                        <div class="profile-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong id="headerUserName">
+                                Student
+                            </strong>
+
+                            <span>
+                                Student
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+        <!-- CONTENT -->
+        <section class="content">
+
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+
+                <div>
+                    <span class="eyebrow">APTITUDE PRACTICE</span>
+
+                    <h1>
+                        Sharpen Your Aptitude Skills
+                    </h1>
+
+                    <p>
+                        Practice placement-focused aptitude questions
+                        and improve your accuracy and speed.
+                    </p>
+                </div>
+
+                <div class="overall-score">
+
+                    <span>Your Progress</span>
+
+                    <strong>68%</strong>
+
+                    <div class="mini-progress">
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOPICS -->
+            <div class="section-title">
+                <div>
+                    <h2>Choose a Topic</h2>
+                    <p>Select a topic and start practicing.</p>
+                </div>
+            </div>
+
+
+            <div class="topic-grid">
+
+                <div class="topic-card" data-topic="Quantitative Aptitude">
+
+                    <div class="topic-icon blue">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+
+                    <h3>Quantitative Aptitude</h3>
+
+                    <p>
+                        Numbers, percentages, ratios,
+                        profit & loss and more.
+                    </p>
+
+                    <div class="topic-bottom">
+                        <span>120 Questions</span>
+                        <button class="start-topic">
+                            Start
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="topic-card" data-topic="Logical Reasoning">
+
+                    <div class="topic-icon purple">
+                        <i class="fa-solid fa-puzzle-piece"></i>
+                    </div>
+
+                    <h3>Logical Reasoning</h3>
+
+                    <p>
+                        Series, coding-decoding,
+                        puzzles and logical problems.
+                    </p>
+
+                    <div class="topic-bottom">
+                        <span>100 Questions</span>
+                        <button class="start-topic">
+                            Start
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="topic-card" data-topic="Verbal Ability">
+
+                    <div class="topic-icon orange">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <h3>Verbal Ability</h3>
+
+                    <p>
+                        Grammar, vocabulary,
+                        comprehension and sentence correction.
+                    </p>
+
+                    <div class="topic-bottom">
+                        <span>90 Questions</span>
+                        <button class="start-topic">
+                            Start
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="topic-card" data-topic="Data Interpretation">
+
+                    <div class="topic-icon green">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+
+                    <h3>Data Interpretation</h3>
+
+                    <p>
+                        Tables, charts, graphs and
+                        data-based questions.
+                    </p>
+
+                    <div class="topic-bottom">
+                        <span>80 Questions</span>
+                        <button class="start-topic">
+                            Start
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRACTICE AREA -->
+            <div class="practice-layout">
+
+                <!-- QUESTION -->
+                <section class="question-card">
+
+                    <div class="question-header">
+
+                        <div>
+                            <span class="question-label">
+                                QUANTITATIVE APTITUDE
+                            </span>
+
+                            <h2>
+                                Question <span id="questionNumber">1</span>
+                                of 5
+                            </h2>
+                        </div>
+
+                        <div class="timer">
+                            <i class="fa-regular fa-clock"></i>
+                            <span id="timer">01:00</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="question-progress">
+                        <span id="questionProgress"></span>
+                    </div>
+
+
+                    <div class="question-body">
+
+                        <p class="question-text" id="questionText">
+                            A number is increased by 20% and then
+                            decreased by 20%. What is the net percentage
+                            change?
+                        </p>
+
+
+                        <div class="options" id="options">
+
+                            <button class="option" data-answer="A">
+                                <span>A</span>
+                                4% increase
+                            </button>
+
+                            <button class="option" data-answer="B">
+                                <span>B</span>
+                                4% decrease
+                            </button>
+
+                            <button class="option" data-answer="C">
+                                <span>C</span>
+                                No change
+                            </button>
+
+                            <button class="option" data-answer="D">
+                                <span>D</span>
+                                2% decrease
+                            </button>
+
+                        </div>
+
+
+                        <div class="answer-message" id="answerMessage"></div>
+
+
+                        <div class="question-actions">
+
+                            <button
+                                class="skip-btn"
+                                id="skipBtn"
+                            >
+                                Skip
+                            </button>
+
+                            <button
+                                class="next-btn"
+                                id="nextBtn"
+                            >
+                                Next Question
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- RIGHT PANEL -->
+                <aside class="practice-sidebar">
+
+                    <div class="side-card">
+
+                        <h3>Today's Goal</h3>
+
+                        <div class="goal-number">
+                            <strong>12</strong>
+                            <span>/ 20 questions</span>
+                        </div>
+
+                        <div class="goal-progress">
+                            <span></span>
+                        </div>
+
+                        <p>
+                            Complete 20 questions today
+                            to maintain your practice streak.
+                        </p>
+
+                    </div>
+
+
+                    <div class="side-card">
+
+                        <div class="side-card-header">
+                            <h3>Quick Stats</h3>
+                        </div>
+
+                        <div class="quick-stat">
+                            <span>
+                                <i class="fa-solid fa-circle-check"></i>
+                                Correct
+                            </span>
+
+                            <strong>16</strong>
+                        </div>
+
+                        <div class="quick-stat">
+                            <span>
+                                <i class="fa-solid fa-circle-xmark"></i>
+                                Incorrect
+                            </span>
+
+                            <strong>04</strong>
+                        </div>
+
+                        <div class="quick-stat">
+                            <span>
+                                <i class="fa-solid fa-bullseye"></i>
+                                Accuracy
+                            </span>
+
+                            <strong>80%</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="side-card tip-card">
+
+                        <div class="tip-icon">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+
+                        <div>
+                            <h3>Practice Tip</h3>
+
+                            <p>
+                                Don't spend too much time on one
+                                question. Skip and return later.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<div class="overlay" id="overlay"></div>
+
+
+<script src="aptitude.js"></script>
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

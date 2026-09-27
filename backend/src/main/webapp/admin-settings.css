@@ -1,0 +1,41 @@
+/* =========================================================
+   PlacementGPT — Admin Settings Styles
+   ========================================================= */
+
+.settings-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.settings-card-item {
+    background: #ffffff;
+    border: 1px solid #e8edf3;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+.settings-card-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.settings-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #edf1f5;
+}
+
+.settings-section-header h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.settings-section-header i {
+    color: #0088ff;
+}

@@ -1,0 +1,29 @@
+/* =========================================================
+   PlacementGPT — Admin Coding Problems Styles
+   ========================================================= */
+
+.coding-card-wrapper {
+    background: #ffffff;
+    border: 1px solid #e8edf3;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+.coding-table-container {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e8edf3;
+    overflow: hidden;
+}
+
+.coding-problem-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.pass-rate-pill {
+    color: #10b981;
+    font-weight: 600;
+}

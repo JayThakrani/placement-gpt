@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Analytics — PlacementGPT Admin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <link rel="stylesheet" href="admin-reports.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+            <div class="sidebar-logo" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <a href="dashboard.html" class="logo-link" style="display: flex; align-items: center;">
+                    <img src="images/logo.png" alt="PlacementGPT Logo" class="logo-img">
+                </a>
+                <button id="desktopSidebarToggle" style="background: transparent; border: none; font-size: 18px; color: #6b7280; cursor: pointer; padding: 5px;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="admin-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>ADMIN PANEL</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-students.html" class="nav-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="admin-questions.html" class="nav-item">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>Questions</span>
+                </a>
+
+                <a href="admin-mocktest.html" class="nav-item">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                    <span>Mock Tests</span>
+                </a>
+
+                <a href="admin-coding.html" class="nav-item">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Coding Problems</span>
+                </a>
+
+                <a href="admin-reports.html" class="nav-item active">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Reports</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <a href="admin-settings.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" class="nav-item logout-item" id="logoutButton">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="mobile-menu" id="mobileMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div>
+                    <p class="header-label">ADMINISTRATION</p>
+                    <h1>Reports & Analytics</h1>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button class="header-icon" id="notificationButton">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="admin-profile" id="adminProfile">
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <div class="admin-info">
+                        <strong>Administrator</strong>
+                        <span>Admin</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Page Content -->
+        <section class="admin-section active-section dashboard-content">
+
+            <!-- Welcome Banner -->
+            <div class="welcome-section">
+                <div>
+                    <p class="welcome-small">ANALYTICS & METRICS</p>
+                    <h2>Platform <span>Reports</span></h2>
+                    <p class="welcome-description">Detailed performance analytics and platform usage metrics across student batches.</p>
+                </div>
+                <button class="btn-secondary" id="exportReportBtn">
+                    <i class="fa-solid fa-download"></i> Export Analytics Report
+                </button>
+            </div>
+
+            <!-- Stat Cards Grid -->
+            <div class="stats-grid" style="margin-bottom: 25px;">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span>Average Test Score</span>
+                        <h3>76.4%</h3>
+                        <p class="positive"><i class="fa-solid fa-arrow-up"></i> +4.2% vs last month</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span>Placement Readiness</span>
+                        <h3>82%</h3>
+                        <p class="positive"><i class="fa-solid fa-arrow-up"></i> High benchmark</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span>Top Performing Branch</span>
+                        <h3>Computer Science</h3>
+                        <p class="positive">89.2% average</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span>Avg Prep Time / Day</span>
+                        <h3>1.8 Hrs</h3>
+                        <p class="positive"><i class="fa-solid fa-arrow-up"></i> +15 mins</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leaderboard Card -->
+            <div class="dashboard-card" style="padding: 22px;">
+                <div class="card-header" style="padding: 0 0 18px 0; border-bottom: 1px solid #edf1f5;">
+                    <div>
+                        <h3>Top Performing Students</h3>
+                        <p>Highest scoring students based on test assessments</p>
+                    </div>
+                </div>
+
+                <div class="admin-table-container" style="margin-top: 18px; border: none; box-shadow: none;">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Student</th>
+                                <th>Branch</th>
+                                <th>Tests Taken</th>
+                                <th>Avg Score</th>
+                                <th>Badge</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>#1</strong></td>
+                                <td>Akash Kumar</td>
+                                <td>Computer Science</td>
+                                <td>18</td>
+                                <td><strong style="color: #10b981;">94.5%</strong></td>
+                                <td><span class="badge-success">Gold Scholar</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#2</strong></td>
+                                <td>Priya Shah</td>
+                                <td>Information Technology</td>
+                                <td>16</td>
+                                <td><strong style="color: #10b981;">91.2%</strong></td>
+                                <td><span class="badge-success">Silver Scholar</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#3</strong></td>
+                                <td>Rahul Patel</td>
+                                <td>Computer Science</td>
+                                <td>14</td>
+                                <td><strong style="color: #10b981;">88.7%</strong></td>
+                                <td><span class="badge-primary">Bronze Scholar</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Admin JS -->
+    <script src="admin-dashboard.js"></script>
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

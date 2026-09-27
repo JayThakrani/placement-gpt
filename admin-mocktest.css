@@ -1,0 +1,30 @@
+/* =========================================================
+   PlacementGPT — Admin Mock Test Builder Styles
+   ========================================================= */
+
+.mocktest-card-wrapper {
+    background: #ffffff;
+    border: 1px solid #e8edf3;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+.mocktest-table-container {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e8edf3;
+    overflow: hidden;
+}
+
+.test-title-cell {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.pass-mark-tag {
+    color: #0088ff;
+    font-weight: 700;
+    font-size: 14px;
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Settings — PlacementGPT Admin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <link rel="stylesheet" href="admin-settings.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+            <div class="sidebar-logo" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <a href="dashboard.html" class="logo-link" style="display: flex; align-items: center;">
+                    <img src="images/logo.png" alt="PlacementGPT Logo" class="logo-img">
+                </a>
+                <button id="desktopSidebarToggle" style="background: transparent; border: none; font-size: 18px; color: #6b7280; cursor: pointer; padding: 5px;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="admin-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>ADMIN PANEL</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-students.html" class="nav-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="admin-questions.html" class="nav-item">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>Questions</span>
+                </a>
+
+                <a href="admin-mocktest.html" class="nav-item">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                    <span>Mock Tests</span>
+                </a>
+
+                <a href="admin-coding.html" class="nav-item">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Coding Problems</span>
+                </a>
+
+                <a href="admin-reports.html" class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Reports</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <a href="admin-settings.html" class="nav-item active">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" class="nav-item logout-item" id="logoutButton">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="mobile-menu" id="mobileMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div>
+                    <p class="header-label">ADMINISTRATION</p>
+                    <h1>Platform Settings</h1>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button class="header-icon" id="notificationButton">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="admin-profile" id="adminProfile">
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <div class="admin-info">
+                        <strong>Administrator</strong>
+                        <span>Admin</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Page Content -->
+        <section class="admin-section active-section dashboard-content">
+
+            <!-- Welcome Banner -->
+            <div class="welcome-section">
+                <div>
+                    <p class="welcome-small">SYSTEM CONFIGURATION</p>
+                    <h2>Platform <span>Settings</span></h2>
+                    <p class="welcome-description">Configure general placement settings, security rules, and notification defaults.</p>
+                </div>
+            </div>
+
+            <!-- Settings Form Grid -->
+            <form id="settingsForm" class="settings-grid">
+                
+                <div class="dashboard-card settings-card">
+                    <div class="card-header" style="padding: 0 0 18px 0; margin-bottom: 18px;">
+                        <h3><i class="fa-solid fa-sliders"></i> General System Settings</h3>
+                    </div>
+                    <div class="form-group">
+                        <label>Platform Name</label>
+                        <input type="text" class="form-control" value="PlacementGPT Admin System" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Support Email</label>
+                        <input type="email" class="form-control" value="support@placementgpt.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Default Test Passing Threshold (%)</label>
+                        <input type="number" class="form-control" value="60" min="1" max="100" required>
+                    </div>
+                </div>
+
+                <div class="dashboard-card settings-card">
+                    <div class="card-header" style="padding: 0 0 18px 0; margin-bottom: 18px;">
+                        <h3><i class="fa-solid fa-shield-halved"></i> Security & Access</h3>
+                    </div>
+                    <div class="form-group">
+                        <label>Session Timeout (Minutes)</label>
+                        <input type="number" class="form-control" value="60" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Allow Student Self-Registration</label>
+                        <select class="form-control">
+                            <option value="enabled" selected>Enabled</option>
+                            <option value="disabled">Disabled (Admin Only)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Admin Access Code</label>
+                        <input type="password" class="form-control" value="********">
+                    </div>
+                </div>
+
+                <div class="dashboard-card settings-card full-width" style="padding: 22px;">
+                    <button type="submit" class="btn-primary" style="width: auto; padding: 12px 30px;">
+                        <i class="fa-solid fa-floppy-disk"></i> Save Settings
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- Admin JS -->
+    <script src="admin-dashboard.js"></script>
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

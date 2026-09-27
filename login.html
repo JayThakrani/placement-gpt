@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PlacementGPT | Login</title>
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="login.css">
+
+    <link rel="stylesheet" href="theme.css">
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <!-- =========================================
+             LEFT BRANDING
+        ========================================== -->
+
+        <section class="hero-section">
+
+
+            <!-- Website Logo -->
+
+            <a href="index.html" class="website-logo-link">
+
+                <img
+                    src="images/logo.png"
+                    class="website-logo"
+                    alt="PlacementGPT">
+
+            </a>
+
+
+            <!-- Hero Content -->
+
+            <div class="hero-content">
+
+
+                <div class="eyebrow">
+
+                    <span class="eyebrow-dot"></span>
+
+                    AI-POWERED PLACEMENT PREPARATION
+
+                </div>
+
+
+                <h1 class="hero-title">
+
+                    Your AI
+                    <br>
+
+                    <span>Placement Partner</span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Practice aptitude, coding,
+                    <br>
+
+                    mock interviews, resume analysis,
+                    <br>
+
+                    company-specific preparation,
+                    <br>
+
+                    and AI-powered learning—
+                    <br>
+
+                    all in one platform.
+
+                </p>
+
+
+                <!-- Features -->
+
+                <div class="features">
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-brain"></i>
+
+                        </div>
+
+                        <span>AI Interview</span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-chart-simple"></i>
+
+                        </div>
+
+                        <span>Mock Tests</span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-code"></i>
+
+                        </div>
+
+                        <span>Coding Practice</span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+                        <span>Group Discussion</span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Illustration -->
+
+            <img
+                src="images/illustration.png"
+                class="hero-image"
+                alt="Placement preparation illustration">
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             LOGIN CARD
+        ========================================== -->
+
+        <section class="login-card">
+
+
+            <!-- Logo -->
+
+            <div class="login-logo-wrapper">
+
+                <img
+                    src="images/logo.png"
+                    class="login-logo"
+                    alt="PlacementGPT Logo">
+
+            </div>
+
+
+            <!-- Heading -->
+
+            <h2 class="login-title">
+                Welcome Back
+            </h2>
+
+
+            <p class="login-text">
+
+                Login to continue your placement journey
+
+            </p>
+
+            <!-- Role Selector Tabs -->
+            <div class="role-toggle-group">
+                <button type="button" class="role-tab active" id="roleStudentBtn" data-role="STUDENT">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Student Login</span>
+                </button>
+                <button type="button" class="role-tab" id="roleAdminBtn" data-role="ADMIN">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <span>Admin Login</span>
+                </button>
+            </div>
+
+            <!-- =====================================
+                 LOGIN FORM
+            ====================================== -->
+
+            <form id="loginForm" novalidate>
+
+
+                <!-- Email -->
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="email-box">
+
+                        <i class="fa-regular fa-envelope input-icon"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Email Address"
+                            autocomplete="username">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Password -->
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="password-box">
+
+                        <i class="fa-solid fa-lock input-icon"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Password"
+                            autocomplete="current-password">
+
+
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            id="togglePassword"
+                            aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Forgot Password -->
+
+                <div class="forgot-row">
+
+                    <a
+                        href="#"
+                        class="forgot-password"
+                        id="forgotPassword">
+
+                        Forgot Password?
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- Login Button -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                    id="loginButton">
+
+                    <span>LOGIN</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+
+                <!-- Divider -->
+
+                <div class="divider">
+
+                    <span></span>
+
+                    <b>OR</b>
+
+                    <span></span>
+
+                </div>
+
+
+
+                <!-- Google -->
+
+                <button
+                    type="button"
+                    class="google-button"
+                    id="googleButton">
+
+                    <i class="fa-brands fa-google google-icon"></i>
+
+                    <span>
+                        Continue With Google
+                    </span>
+
+                </button>
+
+
+
+                <!-- Signup -->
+
+                <p class="signup-text">
+
+                    Don't have an account?
+
+                    <a href="register.html">
+                        Sign Up
+                    </a>
+
+                </p>
+
+
+            </form>
+
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- Login JavaScript -->
+
+    <script src="login.js"></script>
+
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+
+</html>

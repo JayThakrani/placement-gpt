@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Create your PlacementGPT account">
+
+    <title>PlacementGPT | Create Account</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+
+<div class="register-page">
+
+    <!-- =================================================
+         LEFT BRANDING PANEL
+    ================================================== -->
+
+    <section class="brand-panel">
+
+        <a href="index.html" class="brand-logo">
+            <img src="images/logo.png" alt="PlacementGPT">
+        </a>
+
+        <div class="brand-content">
+
+            <div class="brand-badge">
+                <span></span>
+                SMARTER PLACEMENT PREPARATION
+            </div>
+
+            <h1>
+                Start your
+                <span>placement journey.</span>
+            </h1>
+
+            <p>
+                Build your skills, practice consistently and
+                prepare for your dream company with PlacementGPT.
+            </p>
+
+            <div class="benefits">
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <div>
+                        <strong>Structured Preparation</strong>
+                        <span>Learn and practice in one place.</span>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div>
+                        <strong>Coding Practice</strong>
+                        <span>Build strong problem-solving skills.</span>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <div>
+                        <strong>Track Your Progress</strong>
+                        <span>Know exactly where you stand.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="brand-footer">
+
+            <span>
+                <i class="fa-solid fa-shield-halved"></i>
+                Your learning journey, organized.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         REGISTER AREA
+    ================================================== -->
+
+    <section class="register-area">
+
+        <div class="register-card">
+
+            <div class="card-header">
+
+                <div class="mobile-logo">
+                    <img src="images/logo.png"
+                         alt="PlacementGPT">
+                </div>
+
+                <h2>
+                    Create your account
+                </h2>
+
+                <p>
+                    Start preparing smarter for your placements
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 REGISTER FORM
+            ================================================== -->
+
+            <form id="registerForm" novalidate>
+
+
+                <!-- Full Name -->
+
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-regular fa-user input-icon"></i>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                        >
+
+                    </div>
+
+                    <small class="error-message"
+                           id="fullNameError"></small>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-regular fa-envelope input-icon"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                        >
+
+                    </div>
+
+                    <small class="error-message"
+                           id="emailError"></small>
+
+                </div>
+
+
+                <!-- Academic Row -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="branch">
+                            Branch
+                        </label>
+
+                        <div class="input-wrapper select-wrapper">
+
+                            <i class="fa-solid fa-code-branch input-icon"></i>
+
+                            <select id="branch"
+                                    name="branch">
+
+                                <option value="">
+                                    Select branch
+                                </option>
+
+                                <option value="Computer Engineering">
+                                    Computer Engineering
+                                </option>
+
+                                <option value="Information Technology">
+                                    Information Technology
+                                </option>
+
+                                <option value="Electronics">
+                                    Electronics
+                                </option>
+
+                                <option value="Mechanical">
+                                    Mechanical
+                                </option>
+
+                                <option value="Civil">
+                                    Civil
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <small class="error-message"
+                               id="branchError"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="graduationYear">
+                            Graduation Year
+                        </label>
+
+                        <div class="input-wrapper select-wrapper">
+
+                            <i class="fa-regular fa-calendar input-icon"></i>
+
+                            <select id="graduationYear"
+                                    name="graduationYear">
+
+                                <option value="">
+                                    Select year
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <small class="error-message"
+                               id="graduationYearError"></small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- College -->
+
+                <div class="form-group">
+
+                    <label for="college">
+                        College / University
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-building-columns input-icon"></i>
+
+                        <input
+                            type="text"
+                            id="college"
+                            name="college"
+                            placeholder="Enter your college or university"
+                            autocomplete="organization"
+                        >
+
+                    </div>
+
+                    <small class="error-message"
+                           id="collegeError"></small>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock input-icon"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div class="password-strength"
+                         id="passwordStrength">
+
+                        <div class="strength-bars">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <small id="strengthText">
+                            Use 8 or more characters
+                        </small>
+
+                    </div>
+
+                    <small class="error-message"
+                           id="passwordError"></small>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock input-icon"></i>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Re-enter your password"
+                            autocomplete="new-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="confirmPasswordToggle"
+                            aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                    <small class="error-message"
+                           id="confirmPasswordError"></small>
+
+                </div>
+
+
+                <!-- Terms -->
+
+                <div class="terms-group">
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                        >
+
+                        <span class="custom-checkbox"></span>
+
+                        <span class="terms-text">
+                            I agree to the
+                            <a href="#">
+                                Terms of Service
+                            </a>
+                            and
+                            <a href="#">
+                                Privacy Policy
+                            </a>.
+                        </span>
+
+                    </label>
+
+                    <small class="error-message"
+                           id="termsError"></small>
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="register-button"
+                    id="registerButton">
+
+                    <span class="button-text">
+                        Create Account
+                    </span>
+
+                    <span class="button-loader">
+                        <i class="fa-solid fa-circle-notch fa-spin"></i>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right button-arrow"></i>
+
+                </button>
+
+            </form>
+
+
+            <!-- Divider -->
+
+            <div class="divider">
+
+                <span></span>
+
+                <p>OR</p>
+
+                <span></span>
+
+            </div>
+
+
+            <!-- Google -->
+
+            <button
+                type="button"
+                class="google-button"
+                id="googleButton">
+
+                <i class="fa-brands fa-google"></i>
+
+                <span>
+                    Continue with Google
+                </span>
+
+            </button>
+
+
+            <!-- Login -->
+
+            <p class="login-text">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- Toast -->
+
+<div class="toast"
+     id="toast">
+
+    <div class="toast-icon">
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+    <div>
+        <strong id="toastTitle">
+            Success
+        </strong>
+
+        <span id="toastMessage">
+            Account created successfully.
+        </span>
+    </div>
+
+    <button id="toastClose"
+            aria-label="Close">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+</div>
+
+
+<script src="register.js"></script>
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

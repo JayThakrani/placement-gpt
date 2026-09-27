@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management — PlacementGPT Admin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <link rel="stylesheet" href="admin-students.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+            <div class="sidebar-logo" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <a href="dashboard.html" class="logo-link" style="display: flex; align-items: center;">
+                    <img src="images/logo.png" alt="PlacementGPT Logo" class="logo-img">
+                </a>
+                <button id="desktopSidebarToggle" style="background: transparent; border: none; font-size: 18px; color: #6b7280; cursor: pointer; padding: 5px;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="admin-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>ADMIN PANEL</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="admin-students.html" class="nav-item active">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="admin-questions.html" class="nav-item">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>Questions</span>
+                </a>
+
+                <a href="admin-mocktest.html" class="nav-item">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                    <span>Mock Tests</span>
+                </a>
+
+                <a href="admin-coding.html" class="nav-item">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Coding Problems</span>
+                </a>
+
+                <a href="admin-reports.html" class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Reports</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <a href="admin-settings.html" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" class="nav-item logout-item" id="logoutButton">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="mobile-menu" id="mobileMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div>
+                    <p class="header-label">ADMINISTRATION</p>
+                    <h1>Student Management</h1>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button class="header-icon" id="notificationButton">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="admin-profile" id="adminProfile">
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <div class="admin-info">
+                        <strong>Administrator</strong>
+                        <span>Admin</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Page Content -->
+        <section class="admin-section active-section dashboard-content">
+
+            <!-- Welcome Banner -->
+            <div class="welcome-section">
+                <div>
+                    <p class="welcome-small">STUDENT MANAGEMENT</p>
+                    <h2>Manage Registered <span>Students</span></h2>
+                    <p class="welcome-description">View, search, filter and control student accounts across departments.</p>
+                </div>
+                <button class="btn-primary" id="openAddStudentModalBtn">
+                    <i class="fa-solid fa-user-plus"></i> Add New Student
+                </button>
+            </div>
+
+            <!-- Table Card -->
+            <div class="dashboard-card" style="padding: 22px;">
+                <div class="admin-toolbar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="studentSearchInput" placeholder="Search students by name, email, or college...">
+                    </div>
+                    <select class="filter-select" id="studentBranchFilter">
+                        <option value="ALL">All Branches</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Mechanical">Mechanical</option>
+                    </select>
+                </div>
+
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Student</th>
+                                <th>College</th>
+                                <th>Branch</th>
+                                <th>Semester</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fullStudentsTbody">
+                            <!-- Rendered by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Modals -->
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="modal-dialog" id="addStudentModal">
+        <div class="modal-header">
+            <h3><i class="fa-solid fa-user-plus"></i> Add New Student</h3>
+            <button class="modal-close closeModalBtn">&times;</button>
+        </div>
+        <form id="addStudentForm">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" class="form-control" id="newStudentName" placeholder="e.g. Vikram Sharma" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" class="form-control" id="newStudentEmail" placeholder="e.g. vikram@placementgpt.com" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>College *</label>
+                        <input type="text" class="form-control" id="newStudentCollege" placeholder="e.g. IIT Bombay" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Branch *</label>
+                        <select class="form-control" id="newStudentBranch" required>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Mechanical">Mechanical</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Semester *</label>
+                    <input type="number" class="form-control" id="newStudentSemester" min="1" max="8" value="6" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary closeModalBtn">Cancel</button>
+                <button type="submit" class="btn-primary">Add Student</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Admin JS -->
+    <script src="admin-dashboard.js"></script>
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

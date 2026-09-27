@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="PlacementGPT - Your AI Placement Partner">
+
+    <title>PlacementGPT | Your AI Placement Partner</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <!-- Logo -->
+        <a href="index.html" class="brand">
+            <img src="images/logo.png" alt="PlacementGPT Logo">
+        </a>
+
+        <!-- Navigation -->
+        <nav class="nav-links">
+
+            <a href="#home" class="nav-link active">
+                Home
+            </a>
+
+            <a href="#features" class="nav-link">
+                Features
+            </a>
+
+            <a href="#how-it-works" class="nav-link">
+                How It Works
+            </a>
+
+            <a href="#about" class="nav-link">
+                About
+            </a>
+
+        </nav>
+
+        <!-- Navigation Actions -->
+        <div class="nav-actions">
+
+            <a href="login.html" class="login-link">
+                Login
+            </a>
+
+            <a href="register.html" class="nav-register">
+                Get Started
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <button class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open menu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#about">About</a>
+
+    <div class="mobile-menu-divider"></div>
+
+    <a href="login.html">Login</a>
+
+    <a href="register.html" class="mobile-register">
+        Get Started
+    </a>
+
+</div>
+
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <!-- Decorative background -->
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+
+    <div class="hero-container">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+
+                <span class="badge-dot"></span>
+
+                Smart Preparation. Better Placements.
+
+            </div>
+
+            <h1>
+                Your AI
+                <span>Placement Partner</span>
+            </h1>
+
+            <p class="hero-description">
+
+                Prepare smarter for your placement journey with
+                aptitude practice, coding challenges, mock tests,
+                interview preparation and personalized progress
+                tracking — all in one platform.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="register.html"
+                   class="primary-button">
+
+                    Start Preparing
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+                <a href="#features"
+                   class="secondary-button">
+
+                    Explore Features
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- Small trust line -->
+
+            <div class="hero-trust">
+
+                <div class="trust-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <span>
+                    One platform for your complete placement preparation
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT VISUAL -->
+
+        <div class="hero-visual">
+
+            <div class="visual-backdrop"></div>
+
+            <!-- Main Dashboard Preview -->
+
+            <div class="dashboard-preview">
+
+                <div class="preview-topbar">
+
+                    <div class="preview-brand">
+
+                        <div class="preview-logo">
+                            PG
+                        </div>
+
+                        <span>PlacementGPT</span>
+
+                    </div>
+
+                    <div class="preview-user"></div>
+
+                </div>
+
+
+                <div class="preview-content">
+
+                    <div class="preview-heading">
+
+                        <div>
+                            <small>Good morning 👋</small>
+                            <strong>Ready to prepare?</strong>
+                        </div>
+
+                        <div class="preview-date">
+                            Today
+                        </div>
+
+                    </div>
+
+
+                    <!-- Progress -->
+
+                    <div class="preview-progress-card">
+
+                        <div class="progress-info">
+
+                            <div>
+                                <span>Overall Progress</span>
+                                <strong>72%</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="progress-track">
+
+                            <div class="progress-fill"></div>
+
+                        </div>
+
+                        <small>
+                            Keep going! You're making great progress.
+                        </small>
+
+                    </div>
+
+
+                    <!-- Mini Cards -->
+
+                    <div class="preview-cards">
+
+                        <div class="mini-card">
+
+                            <div class="mini-icon blue">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+
+                            <div>
+                                <strong>84%</strong>
+                                <span>Aptitude</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="mini-card">
+
+                            <div class="mini-icon purple">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+
+                            <div>
+                                <strong>56</strong>
+                                <span>Coding Solved</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="mini-card">
+
+                            <div class="mini-icon green">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+
+                            <div>
+                                <strong>8.4</strong>
+                                <span>Avg. Score</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Activity -->
+
+                    <div class="preview-activity">
+
+                        <div class="activity-title">
+                            Recent Activity
+                        </div>
+
+                        <div class="activity-row">
+
+                            <div class="activity-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+
+                            <div>
+                                <strong>Quantitative Aptitude</strong>
+                                <span>Completed practice set</span>
+                            </div>
+
+                            <small>Today</small>
+
+                        </div>
+
+
+                        <div class="activity-row">
+
+                            <div class="activity-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+
+                            <div>
+                                <strong>Java Coding</strong>
+                                <span>Solved 3 problems</span>
+                            </div>
+
+                            <small>Yesterday</small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Floating Cards -->
+
+            <div class="floating-card floating-score">
+
+                <div class="floating-icon">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+
+                <div>
+                    <strong>Top Performer</strong>
+                    <span>Excellent progress</span>
+                </div>
+
+            </div>
+
+
+            <div class="floating-card floating-ai">
+
+                <div class="ai-pulse">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+
+                <div>
+                    <strong>AI Powered</strong>
+                    <span>Personalized learning</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURES SECTION
+===================================================== -->
+
+<section class="features-section" id="features">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                EVERYTHING YOU NEED
+            </div>
+
+            <h2>
+                Prepare for placements
+                <span>with confidence</span>
+            </h2>
+
+            <p>
+                Everything you need to strengthen your technical
+                and aptitude skills before stepping into your
+                placement interviews.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <!-- Feature 1 -->
+
+            <article class="feature-card">
+
+                <div class="feature-icon blue-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <div class="feature-number">
+                    01
+                </div>
+
+                <h3>
+                    Aptitude Preparation
+                </h3>
+
+                <p>
+                    Practice quantitative aptitude, logical reasoning,
+                    verbal ability and data interpretation with
+                    structured questions.
+                </p>
+
+                <a href="aptitude.html">
+                    Practice Now
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- Feature 2 -->
+
+            <article class="feature-card">
+
+                <div class="feature-icon purple-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div class="feature-number">
+                    02
+                </div>
+
+                <h3>
+                    Coding Practice
+                </h3>
+
+                <p>
+                    Improve your problem-solving skills through
+                    coding questions organized by difficulty and
+                    topic.
+                </p>
+
+                <a href="coding.html">
+                    Start Coding
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- Feature 3 -->
+
+            <article class="feature-card">
+
+                <div class="feature-icon green-icon">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                </div>
+
+                <div class="feature-number">
+                    03
+                </div>
+
+                <h3>
+                    Mock Tests
+                </h3>
+
+                <p>
+                    Experience placement-style mock tests with
+                    timers, question navigation and detailed
+                    performance analysis.
+                </p>
+
+                <a href="mocktest.html">
+                    Take a Test
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- Feature 4 -->
+
+            <article class="feature-card">
+
+                <div class="feature-icon orange-icon">
+                    <i class="fa-brands fa-java"></i>
+                </div>
+
+                <div class="feature-number">
+                    04
+                </div>
+
+                <h3>
+                    Java Coding
+                </h3>
+
+                <p>
+                    Build strong Java fundamentals and practice
+                    placement-oriented Java programming problems.
+                </p>
+
+                <a href="java-coding.html">
+                    Practice Java
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- Feature 5 -->
+
+            <article class="feature-card">
+
+                <div class="feature-icon pink-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+
+                <div class="feature-number">
+                    05
+                </div>
+
+                <h3>
+                    Interview Preparation
+                </h3>
+
+                <p>
+                    Prepare for technical and HR interviews with
+                    structured questions and placement-focused
+                    preparation.
+                </p>
+
+                <a href="#">
+                    Prepare Now
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- Feature 6 -->
+
+            <article class="feature-card">
+
+                <div class="feature-icon cyan-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+
+                <div class="feature-number">
+                    06
+                </div>
+
+                <h3>
+                    Progress Tracking
+                </h3>
+
+                <p>
+                    Track your preparation, identify weak areas
+                    and understand how your performance improves
+                    over time.
+                </p>
+
+                <a href="progress.html">
+                    View Progress
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
+
+<section class="how-section" id="how-it-works">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                SIMPLE PROCESS
+            </div>
+
+            <h2>
+                Your placement journey,
+                <span>made simple</span>
+            </h2>
+
+            <p>
+                Follow a structured preparation path instead of
+                jumping between different resources.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Create your account
+                    </h3>
+
+                    <p>
+                        Set up your profile and tell PlacementGPT
+                        about your academic background.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Practice consistently
+                    </h3>
+
+                    <p>
+                        Solve aptitude questions, coding problems
+                        and placement mock tests.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Track your improvement
+                    </h3>
+
+                    <p>
+                        Analyze your performance and focus on the
+                        areas where you need more practice.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta-section" id="about">
+
+    <div class="cta-container">
+
+        <div class="cta-content">
+
+            <div class="cta-label">
+                START YOUR PREPARATION
+            </div>
+
+            <h2>
+                Your placement journey
+                starts <span>today.</span>
+            </h2>
+
+            <p>
+                Build your skills, practice consistently and walk
+                into your placement season with confidence.
+            </p>
+
+            <a href="register.html"
+               class="cta-button">
+
+                Get Started Free
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+        <div class="cta-decoration">
+
+            <div class="cta-circle circle-one"></div>
+            <div class="cta-circle circle-two"></div>
+
+            <i class="fa-solid fa-rocket"></i>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <img src="images/logo.png"
+                 alt="PlacementGPT Logo">
+
+            <p>
+                Your AI-powered partner for smarter
+                placement preparation.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="login.html">Login</a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 PlacementGPT. All rights reserved.
+            </span>
+
+            <span>
+                Built for smarter placement preparation.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="index.js"></script>
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

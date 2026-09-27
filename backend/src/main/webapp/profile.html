@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | PlacementGPT</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="profile.css">
+        <link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+
+<div class="dashboard-wrapper">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <a href="dashboard.html" class="logo-link" style="display: flex; align-items: center;">
+                    <img src="images/logo.png" alt="PlacementGPT Logo" class="logo-img">
+                </a>
+                <button id="desktopSidebarToggle" style="background: transparent; border: none; font-size: 18px; color: #6b7280; cursor: pointer; padding: 5px;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">MAIN MENU</p>
+
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span>Overview</span>
+                </a>
+
+                <a href="aptitude.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </span>
+                    <span>Aptitude Practice</span>
+                </a>
+
+                <a href="coding.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </span>
+                    <span>Coding Practice</span>
+                </a>
+
+                <a href="mocktest.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </span>
+                    <span>Mock Tests</span>
+                </a>
+
+                <a href="group-discussion.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </span>
+                    <span>Group Discussion</span>
+                </a>
+
+                <p class="nav-title second-title">MY SPACE</p>
+
+                <a href="progress.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </span>
+                    <span>My Progress</span>
+                </a>
+
+                <a href="profile.html" class="nav-item active">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+                    <span>Settings</span>
+                </a>
+
+                <button class="logout-btn" id="logoutBtn">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content">
+
+        <header class="top-header">
+
+                <!-- Mobile Menu -->
+                <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Search -->
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search practice, tests..."
+                    >
+
+                </div>
+
+
+                <!-- Header Right -->
+                <div class="header-right">
+
+                    <!-- Notification -->
+                    <button
+                        class="notification-btn"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+
+                    <!-- User Profile -->
+                    <div class="header-profile" id="profileMenu">
+
+                        <div class="profile-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong id="headerUserName">
+                                Student
+                            </strong>
+
+                            <span>
+                                Student
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+        <section class="page-content">
+
+            <div class="page-heading">
+
+                <div>
+                    <span class="eyebrow">
+                        <i class="fa-solid fa-user"></i>
+                        ACCOUNT
+                    </span>
+
+                    <h1>My Profile</h1>
+
+                    <p>
+                        Manage your personal information and
+                        placement preferences.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="profile-layout">
+
+                <section class="profile-card">
+
+                    <div class="profile-cover"></div>
+
+                    <div class="profile-main">
+
+                        <div class="large-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <h2 id="profileName">Student</h2>
+
+                        <p id="profileEmail">
+                            student@placementgpt.com
+                        </p>
+
+                        <span class="student-badge">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            Student
+                        </span>
+
+                    </div>
+
+                    <div class="profile-stats">
+
+                        <div>
+                            <strong>186</strong>
+                            <span>Questions</span>
+                        </div>
+
+                        <div>
+                            <strong>42</strong>
+                            <span>Coding</span>
+                        </div>
+
+                        <div>
+                            <strong>08</strong>
+                            <span>Tests</span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section class="details-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h2>Personal Information</h2>
+                            <p>Update your profile details</p>
+                        </div>
+
+                        <button id="editBtn" class="edit-btn">
+                            <i class="fa-solid fa-pen"></i>
+                            Edit Profile
+                        </button>
+                    </div>
+
+
+                    <form id="profileForm">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text"
+                                       id="fullName"
+                                       value="Student"
+                                       disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email"
+                                       id="email"
+                                       value="student@placementgpt.com"
+                                       disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Branch</label>
+                                <input type="text"
+                                       id="branch"
+                                       value="Computer Engineering"
+                                       disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Graduation Year</label>
+                                <input type="text"
+                                       id="graduation"
+                                       value="2028"
+                                       disabled>
+                            </div>
+
+                            <div class="form-group full">
+                                <label>College / University</label>
+                                <input type="text"
+                                       id="college"
+                                       value="LDRP Institute of Technology and Research"
+                                       disabled>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-actions" id="formActions">
+
+                            <button type="button"
+                                    class="cancel-btn"
+                                    id="cancelBtn">
+                                Cancel
+                            </button>
+
+                            <button type="submit"
+                                    class="save-btn">
+                                Save Changes
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <section class="details-card preferences-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h2>Placement Preferences</h2>
+                            <p>Personalize your preparation</p>
+                        </div>
+                    </div>
+
+                    <div class="preference-list">
+
+                        <div class="preference">
+                            <div>
+                                <strong>Target Role</strong>
+                                <span>Full Stack Developer</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+
+                        <div class="preference">
+                            <div>
+                                <strong>Primary Language</strong>
+                                <span>Java</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+
+                        <div class="preference">
+                            <div>
+                                <strong>Preparation Level</strong>
+                                <span>Intermediate</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="profile.js"></script>
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

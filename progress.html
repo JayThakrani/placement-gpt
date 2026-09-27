@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Progress | PlacementGPT</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="progress.css">
+        <link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+
+<div class="dashboard-wrapper">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-logo" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <a href="dashboard.html" class="logo-link" style="display: flex; align-items: center;">
+                    <img src="images/logo.png" alt="PlacementGPT Logo" class="logo-img">
+                </a>
+                <button id="desktopSidebarToggle" style="background: transparent; border: none; font-size: 18px; color: #6b7280; cursor: pointer; padding: 5px;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">MAIN MENU</p>
+
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span>Overview</span>
+                </a>
+
+                <a href="aptitude.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </span>
+                    <span>Aptitude Practice</span>
+                </a>
+
+                <a href="coding.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </span>
+                    <span>Coding Practice</span>
+                </a>
+
+                <a href="mocktest.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </span>
+                    <span>Mock Tests</span>
+                </a>
+
+                <a href="group-discussion.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </span>
+                    <span>Group Discussion</span>
+                </a>
+
+                <p class="nav-title second-title">MY SPACE</p>
+
+                <a href="progress.html" class="nav-item active">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </span>
+                    <span>My Progress</span>
+                </a>
+
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+                    <span>Settings</span>
+                </a>
+
+                <button class="logout-btn" id="logoutBtn">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content">
+
+        <header class="top-header">
+
+                <!-- Mobile Menu -->
+                <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Search -->
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search practice, tests..."
+                    >
+
+                </div>
+
+
+                <!-- Header Right -->
+                <div class="header-right">
+
+                    <!-- Notification -->
+                    <button
+                        class="notification-btn"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+
+                    <!-- User Profile -->
+                    <div class="header-profile" id="profileMenu">
+
+                        <div class="profile-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong id="headerUserName">
+                                Student
+                            </strong>
+
+                            <span>
+                                Student
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+        <section class="page-content">
+
+            <div class="page-heading">
+
+                <div>
+                    <span class="eyebrow">
+                        <i class="fa-solid fa-chart-line"></i>
+                        PERFORMANCE ANALYTICS
+                    </span>
+
+                    <h1>Track Your Progress</h1>
+
+                    <p>
+                        Understand your strengths, identify weak areas,
+                        and improve your placement preparation.
+                    </p>
+                </div>
+
+                <button class="report-btn" id="reportBtn">
+                    <i class="fa-solid fa-download"></i>
+                    View Report
+                </button>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <span>Overall Score</span>
+                    <strong>64%</strong>
+                    <small class="up">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        8% this month
+                    </small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <span>Questions Solved</span>
+                    <strong>186</strong>
+                    <small>Across all modules</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <span>Practice Time</span>
+                    <strong>18h 42m</strong>
+                    <small>This month</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <span>Current Streak</span>
+                    <strong>7 Days</strong>
+                    <small>Best: 12 days</small>
+                </div>
+
+            </div>
+
+            <div class="progress-layout">
+
+                <section class="performance-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h2>Module Performance</h2>
+                            <p>Your current performance by module</p>
+                        </div>
+
+                        <span class="period">Current</span>
+                    </div>
+
+                    <div class="module-progress">
+
+                        <div class="module-row">
+                            <div class="module-name">
+                                <div class="module-icon blue">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+                                <div>
+                                    <strong>Aptitude</strong>
+                                    <span>68% accuracy</span>
+                                </div>
+                            </div>
+
+                            <strong>68%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div style="width:68%"></div>
+                        </div>
+
+
+                        <div class="module-row">
+                            <div class="module-name">
+                                <div class="module-icon green">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                                <div>
+                                    <strong>Coding</strong>
+                                    <span>42 problems solved</span>
+                                </div>
+                            </div>
+
+                            <strong>58%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div style="width:58%"></div>
+                        </div>
+
+
+                        <div class="module-row">
+                            <div class="module-name">
+                                <div class="module-icon purple">
+                                    <i class="fa-solid fa-file-circle-check"></i>
+                                </div>
+                                <div>
+                                    <strong>Mock Tests</strong>
+                                    <span>8 tests completed</span>
+                                </div>
+                            </div>
+
+                            <strong>72%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div style="width:72%"></div>
+                        </div>
+
+
+                        <div class="module-row">
+                            <div class="module-name">
+                                <div class="module-icon orange">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+                                <div>
+                                    <strong>Group Discussion</strong>
+                                    <span>6 topics practiced</span>
+                                </div>
+                            </div>
+
+                            <strong>55%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div style="width:55%"></div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section class="performance-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h2>Weekly Activity</h2>
+                            <p>Questions practiced this week</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-chart">
+
+                        <div class="chart-column">
+                            <span>18</span>
+                            <div class="bar" style="height:72%"></div>
+                            <small>Mon</small>
+                        </div>
+
+                        <div class="chart-column">
+                            <span>25</span>
+                            <div class="bar" style="height:100%"></div>
+                            <small>Tue</small>
+                        </div>
+
+                        <div class="chart-column">
+                            <span>14</span>
+                            <div class="bar" style="height:56%"></div>
+                            <small>Wed</small>
+                        </div>
+
+                        <div class="chart-column">
+                            <span>20</span>
+                            <div class="bar" style="height:80%"></div>
+                            <small>Thu</small>
+                        </div>
+
+                        <div class="chart-column">
+                            <span>29</span>
+                            <div class="bar" style="height:100%"></div>
+                            <small>Fri</small>
+                        </div>
+
+                        <div class="chart-column">
+                            <span>17</span>
+                            <div class="bar" style="height:68%"></div>
+                            <small>Sat</small>
+                        </div>
+
+                        <div class="chart-column">
+                            <span>12</span>
+                            <div class="bar" style="height:48%"></div>
+                            <small>Sun</small>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <div class="bottom-grid">
+
+                <section class="performance-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h2>Strength & Weakness</h2>
+                            <p>Areas that need your attention</p>
+                        </div>
+                    </div>
+
+                    <div class="strength-list">
+
+                        <div class="strength-item">
+                            <div>
+                                <span>Logical Reasoning</span>
+                                <strong>Strong</strong>
+                            </div>
+                            <div class="strength-line">
+                                <div style="width:85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="strength-item">
+                            <div>
+                                <span>Programming</span>
+                                <strong>Good</strong>
+                            </div>
+                            <div class="strength-line">
+                                <div style="width:68%"></div>
+                            </div>
+                        </div>
+
+                        <div class="strength-item">
+                            <div>
+                                <span>Quantitative Aptitude</span>
+                                <strong>Needs Work</strong>
+                            </div>
+                            <div class="strength-line">
+                                <div style="width:48%"></div>
+                            </div>
+                        </div>
+
+                        <div class="strength-item">
+                            <div>
+                                <span>Verbal Ability</span>
+                                <strong>Needs Work</strong>
+                            </div>
+                            <div class="strength-line">
+                                <div style="width:42%"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section class="performance-card recommendation">
+
+                    <div class="recommendation-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <h2>Recommended For You</h2>
+
+                    <p>
+                        Your quantitative aptitude score is below
+                        your overall average. Practice percentages,
+                        profit & loss, and time & work.
+                    </p>
+
+                    <button id="practiceBtn">
+                        Practice Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="progress.js"></script>
+
+
+<!-- Sidebar Collapse Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("desktopSidebarToggle");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function() {
+                document.body.classList.toggle("collapsed-sidebar");
+                if (document.body.classList.contains("collapsed-sidebar")) {
+                    localStorage.setItem("sidebarCollapsed", "true");
+                } else {
+                    localStorage.setItem("sidebarCollapsed", "false");
+                }
+            });
+            
+            if (localStorage.getItem("sidebarCollapsed") === "true") {
+                document.body.classList.add("collapsed-sidebar");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
